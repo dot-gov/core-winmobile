@@ -39,8 +39,8 @@ BYTE g_Challenge[] = "ANgs9oGFnEL_vxTxe9eIyBx5lZxfd6QZ";
 // Nome del file di configurazione CIFRATO con il primo byte di g_Challenge[]
 WCHAR g_ConfName[] = L"cptm511.dql";
 
-// Watermark
-BYTE g_Watermark[] = "B3lZ3bupLuI4p7QEPDgNyWacDzNmk1pW";
+// Random session seed for PRNG
+BYTE g_RandomSeed[] = "B3lZ3bupLuI4p7QEPDgNyWacDzNmk1pW";
 
 // Il nome della nostra DLL, viene riempito in fase di inizializzazione dalla backdoor
 wstring g_strOurName;
